@@ -11,3 +11,8 @@
 * Wait for service termination: [WaitForAll](src/main/java/learn/ocp/progr2/ch07concurrency/WaitForAll.java)
 * Submit Task Collections: [InvokeAll](src/main/java/learn/ocp/progr2/ch07concurrency/InvokeAll.java)
 * Wait for first successful: [InvokeAny](src/main/java/learn/ocp/progr2/ch07concurrency/InvokeAny.java)
+
+### Writing Thread-Safe Code
+* Race condition: [SheepManagerRaced](src/main/java/learn/ocp/progr2/ch07concurrency/SheepManagerRaced.java)
+* Atomic: [SheepManagerAtomic](src/main/java/learn/ocp/progr2/ch07concurrency/SheepManagerAtomic.java)
+* Synchronized: [SheepManagerSynch](src/main/java/learn/ocp/progr2/ch07concurrency/SheepManagerSynch.java)

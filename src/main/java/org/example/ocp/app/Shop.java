@@ -35,26 +35,21 @@ public class Shop {
         pm.parseReview("102,2,Where is the sugar?");
         pm.parseReview("102,5,It's perfect with 10 spoons of sugar");
         pm.parseReview("102,1,Did'n like it");
-//        pm.printProductReport(p2);
+        pm.printProductReport(102);
 
         pm.changeLocalization("ru-RU");
-        p3 = pm.reviewProduct(p3, Rating.THREE_STARS, "so so Burger (");
-        p3 = pm.reviewProduct(p3, Rating.FIVE_STARS, "The best Burger!!!");
-        p3 = pm.reviewProduct(p3, Rating.FOUR_STARS, "Nice Burger!");
-//        pm.printProductReport(201);
-//        pm.printProductReport(42);
+        pm.reviewProduct(201, Rating.THREE_STARS, "so so Burger (");
+        pm.reviewProduct(201, Rating.FIVE_STARS, "The best Burger!!!");
+        pm.reviewProduct(201, Rating.FOUR_STARS, "Nice Burger!");
+        pm.printProductReport(201);
 
         Predicate<Product> drinksOnly = p -> p instanceof Drink;
         Comparator<Product> sortByRating = Comparator.comparing(Product::getRating);
 //        pm.printProducts(drinksOnly, sortByRating);
 //        pm.printProducts(sortByRating);
 
-        /*pm.printProductReport(101);
-        pm.parseReview("101,4,Very nice hot cup of tea");
-        pm.printProductReport(101);*/
-
-        Product p = pm.parseProduct("D,103,Tea,1.99,5,");
-        pm.printProductReport(p);
+        /*Product p = pm.parseProduct("D,103,Tea,1.99,5,");
+        pm.printProductReport(p);*/
 
     }
 }

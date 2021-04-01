@@ -1,6 +1,10 @@
 package org.example.ocp.data;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.text.MessageFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -9,27 +13,32 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.FormatStyle;
 import java.util.*;
-import java.util.function.Predicate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class ProductManager {
     private static final Logger logger = Logger.getLogger(ProductManager.class.getName());
+    private static final Path USER_HOME = Path.of(System.getProperty("user.home"));
 
     private static final Map<String, ResourceFormatter> FORMATTERS = Map.of(
             "en-GB", new ResourceFormatter(Locale.UK),
             "en-US", new ResourceFormatter(Locale.US),
             "ru-RU", new ResourceFormatter(new Locale("ru", "RU"))
     );
-
     public static Set<String> getSupportedLocales() {
         return FORMATTERS.keySet();
     }
 
+
     private final ResourceBundle config = ResourceBundle.getBundle("config");
     private final MessageFormat reviewFormat = new MessageFormat(config.getString("review.data.format"));
     private final MessageFormat productFormat = new MessageFormat(config.getString("product.data.format"));
+
+    private final Path reportsFolder = USER_HOME.resolve(config.getString("reports.folder"));
+    private final Path dataFolder = USER_HOME.resolve(config.getString("data.folder"));
+    private final Path tempFolder = USER_HOME.resolve(config.getString("temp.folder"));
+    private final String reportFilePattern = config.getString("report.file");
 
     private ResourceFormatter formatter;
 
@@ -47,21 +56,24 @@ public class ProductManager {
         try {
             Product product = findProductById(productId);
             printProductReport(product);
-        } catch (ProductManagerException e) {
+        } catch (ProductManagerException | IOException e) {
             logger.log(Level.WARNING, "Error printing product report", e);
         }
     }
 
-    public void printProductReport(Product product) {
-        System.out.println(formatter.formatProduct(product));
-        List<Review> reviews = products.get(product);
-        if (reviews.isEmpty()) {
-            System.out.println(formatter.getString("no.review"));
-        } else {
-            System.out.println(reviews.stream()
-                    .sorted()
-                    .map(formatter::formatReview)
-                    .collect(Collectors.joining("\n")));
+    public void printProductReport(Product product) throws IOException {
+        Path productPath = reportsFolder.resolve(MessageFormat.format(reportFilePattern, product.getId()));
+        try (PrintWriter out = new PrintWriter(Files.newBufferedWriter(productPath))) {
+            out.println(formatter.formatProduct(product));
+            List<Review> reviews = products.get(product);
+            if (reviews.isEmpty()) {
+                out.println(formatter.getString("no.review"));
+            } else {
+                out.println(reviews.stream()
+                        .sorted()
+                        .map(formatter::formatReview)
+                        .collect(Collectors.joining("\n")));
+            }
         }
     }
 
@@ -112,7 +124,7 @@ public class ProductManager {
                 .orElseThrow(() -> new ProductManagerException("Cannot find product by ID " + id));
     }
 
-    public void printProducts(Predicate<Product> filter, Comparator<Product> comparator) {
+    /*public void printProducts(Predicate<Product> filter, Comparator<Product> comparator) {
         products.keySet().stream()
                 .filter(filter)
                 .sorted(comparator)
@@ -123,7 +135,7 @@ public class ProductManager {
         products.keySet().stream()
                 .sorted(comparator)
                 .forEach(this::printProductReport);
-    }
+    }*/
 
     public void parseReview(String text) {
         try {

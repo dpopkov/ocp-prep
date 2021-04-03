@@ -17,6 +17,7 @@
 * Atomic: [SheepManagerAtomic](src/main/java/learn/ocp/progr2/ch07concurrency/SheepManagerAtomic.java)
 * Synchronized: [SheepManagerSynch](src/main/java/learn/ocp/progr2/ch07concurrency/SheepManagerSynch.java)
 * ReentrantLock with tryLock: [SheepManagerTryLock](src/main/java/learn/ocp/progr2/ch07concurrency/SheepManagerTryLock.java)
+* [DeadLockExample](src/main/java/learn/ocp/progr2/ch07concurrency/DeadLockExample.java)
 
 ### Orchestrating Tasks with a CyclicBarrier
 * Without CyclicBarrier: [LionPenManagerChaotic](src/main/java/learn/ocp/progr2/ch07concurrency/LionPenManagerChaotic.java)

@@ -36,6 +36,15 @@ java --module-path {module_path} \
     --module {module}/{fully qualified main class}
 ```
 
-## Working with Modules
+## Working with Two Modules
+
+### Compile module specifying module source path and modules
+* `cd ../jmodule3`
+* ` javac -d out --module-source-path src -m greeter.cli,greeter.hello`  
+or
+* ` javac -d out --module-source-path src -m greeter.cli`   (compiler compiles all required modules)
+
+### Run module
+* `java -p out -m greeter.cli/greeter.cli.Main`
 
 

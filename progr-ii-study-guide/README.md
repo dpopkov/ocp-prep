@@ -22,3 +22,9 @@
 ### Orchestrating Tasks with a CyclicBarrier
 * Without CyclicBarrier: [LionPenManagerChaotic](src/main/java/learn/ocp/progr2/ch07concurrency/LionPenManagerChaotic.java)
 * Using CyclicBarrier: [LionPenManagerCyclic](src/main/java/learn/ocp/progr2/ch07concurrency/LionPenManagerCyclic.java)
+
+
+## Chapter 10 - JDBC
+
+### Setup
+* [Setup Derby Database](src/main/java/learn/ocp/progr2/ch10jdbc/SetupDerbyDatabase.java)

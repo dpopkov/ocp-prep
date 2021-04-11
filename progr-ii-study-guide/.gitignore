@@ -29,3 +29,7 @@ hs_err_pid*
 
 # Derby DB
 /zoo
+
+# HSQL DB
+h-zoo/
+h-zoo.*

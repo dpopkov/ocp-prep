@@ -28,7 +28,7 @@ __All the code in this repository is just for illustrating purposes!__.
 
 ## Chapter 10 - JDBC
 
-### Setup
+### Setup Derby
 * [Setup Derby Database](src/main/java/learn/ocp/progr2/ch10jdbc/SetupDerbyDatabase.java)
 
 ### Connecting
@@ -45,3 +45,6 @@ __All the code in this repository is just for illustrating purposes!__.
 
 ### Working with PreparedStatement Parameters
 * [WorkingWithParameters](src/main/java/learn/ocp/progr2/ch10jdbc/WorkingWithParameters.java)
+
+### Setup HSQL
+* [Setup HSQL Database](src/main/java/learn/ocp/progr2/ch10jdbc/SetupHsqlDatabase.java)

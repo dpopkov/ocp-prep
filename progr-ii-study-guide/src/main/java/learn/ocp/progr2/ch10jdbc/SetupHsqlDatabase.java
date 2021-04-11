@@ -4,9 +4,7 @@ import java.sql.*;
 
 public class SetupHsqlDatabase {
     public static void main(String[] args) throws Exception {
-        String url = "jdbc:hsqldb:file:h-zoo";
-
-        try (Connection conn = DriverManager.getConnection(url)) {
+        try (Connection conn = DriverManager.getConnection(HsqlZooDb.URL)) {
 
             runUpdate(conn, "DROP PROCEDURE read_e_names IF EXISTS");
             runUpdate(conn, "DROP PROCEDURE read_names_by_letter IF EXISTS");

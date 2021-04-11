@@ -48,3 +48,9 @@ __All the code in this repository is just for illustrating purposes!__.
 
 ### Setup HSQL
 * [Setup HSQL Database](src/main/java/learn/ocp/progr2/ch10jdbc/SetupHsqlDatabase.java)
+
+### Calling Procedures
+* [Calling Procedure without Parameters](src/main/java/learn/ocp/progr2/ch10jdbc/CallingProcedureWithoutParameters.java)
+* [Passing an IN Parameter](src/main/java/learn/ocp/progr2/ch10jdbc/PassingInParameter.java)
+* [Returning an OUT Parameter](src/main/java/learn/ocp/progr2/ch10jdbc/ReturningOutParameter.java)
+* [Working with INOUT Parameter](src/main/java/learn/ocp/progr2/ch10jdbc/WorkingWithInOutParameter.java)

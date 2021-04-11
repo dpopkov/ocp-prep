@@ -1,5 +1,7 @@
 # Examples from "OCP Java SE 11 Programmer II Study Guide"
 
+__All the code in this repository is just for illustrating purposes!__.
+
 ## Chapter 7 - Concurrency
 
 ### Creating Threads with the Concurrency API
@@ -28,3 +30,18 @@
 
 ### Setup
 * [Setup Derby Database](src/main/java/learn/ocp/progr2/ch10jdbc/SetupDerbyDatabase.java)
+
+### Connecting
+* [Getting Database Connection](src/main/java/learn/ocp/progr2/ch10jdbc/GettingDbConnection.java)
+
+### Modifying Data
+* [Modifying Data with executeUpdate](src/main/java/learn/ocp/progr2/ch10jdbc/ModifyingDataWithExecuteUpdate.java)
+
+### Reading Data
+* [Reading Data with executeQuery](src/main/java/learn/ocp/progr2/ch10jdbc/ReadingDataWithExecuteQuery.java)
+
+### Processing Data with execute
+* [ProcessingDataWithExecute](src/main/java/learn/ocp/progr2/ch10jdbc/ProcessingDataWithExecute.java)
+
+### Working with PreparedStatement Parameters
+* [WorkingWithParameters](src/main/java/learn/ocp/progr2/ch10jdbc/WorkingWithParameters.java)

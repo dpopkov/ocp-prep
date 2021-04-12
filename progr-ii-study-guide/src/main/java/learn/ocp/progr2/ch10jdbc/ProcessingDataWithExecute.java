@@ -8,12 +8,10 @@ import java.sql.SQLException;
 public class ProcessingDataWithExecute {
 
     public static void main(String[] args) throws SQLException {
-        String url = "jdbc:derby:zoo";
-
         var selectSql = "SELECT id, name FROM exhibits";
         var updateSql = "UPDATE exhibits SET name = '' WHERE name = 'None'";
 
-        try (Connection conn = DriverManager.getConnection(url)) {
+        try (Connection conn = DriverManager.getConnection(DerbyZooDb.URL)) {
             try (var ps = conn.prepareStatement(Math.random() > 0.5 ? selectSql : updateSql)) {
                 boolean isResultSet = ps.execute();
                 if (isResultSet) {

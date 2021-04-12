@@ -8,11 +8,9 @@ import java.sql.SQLException;
 public class ReadingDataWithExecuteQuery {
 
     public static void main(String[] args) throws SQLException {
-        String url = "jdbc:derby:zoo";
-
         var sql = "SELECT id, name FROM names";
 
-        try (Connection conn = DriverManager.getConnection(url)) {
+        try (Connection conn = DriverManager.getConnection(DerbyZooDb.URL)) {
             try (var ps = conn.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {

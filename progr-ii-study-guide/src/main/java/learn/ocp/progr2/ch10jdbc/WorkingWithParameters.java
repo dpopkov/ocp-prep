@@ -7,9 +7,7 @@ import java.sql.SQLException;
 public class WorkingWithParameters {
 
     public static void main(String[] args) throws SQLException {
-        String url = "jdbc:derby:zoo";
-
-        try (Connection conn = DriverManager.getConnection(url)) {
+        try (Connection conn = DriverManager.getConnection(DerbyZooDb.URL)) {
             register(conn, 6, 1, "Edith");
         }
     }

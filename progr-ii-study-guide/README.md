@@ -54,3 +54,6 @@ __All the code in this repository is just for illustrating purposes!__.
 * [Passing an IN Parameter](src/main/java/learn/ocp/progr2/ch10jdbc/PassingInParameter.java)
 * [Returning an OUT Parameter](src/main/java/learn/ocp/progr2/ch10jdbc/ReturningOutParameter.java)
 * [Working with INOUT Parameter](src/main/java/learn/ocp/progr2/ch10jdbc/WorkingWithInOutParameter.java)
+
+### Transactions
+* [Controlling Transactions](src/main/java/learn/ocp/progr2/ch10jdbc/ControlTransactions.java)

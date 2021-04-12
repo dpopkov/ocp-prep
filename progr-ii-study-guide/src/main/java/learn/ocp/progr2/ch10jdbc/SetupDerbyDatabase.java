@@ -4,8 +4,7 @@ import java.sql.*;
 
 public class SetupDerbyDatabase {
     public static void main(String[] args) throws Exception {
-        String url = "jdbc:derby:zoo;create=true";
-        try (Connection conn = DriverManager.getConnection(url)) {
+        try (Connection conn = DriverManager.getConnection(DerbyZooDb.URL)) {
 
             // run(conn,"DROP TABLE names");
             // run(conn,"DROP TABLE exhibits");
@@ -29,7 +28,7 @@ public class SetupDerbyDatabase {
             run(conn,"INSERT INTO names VALUES (4, 1, 'Eddie')");
             run(conn,"INSERT INTO names VALUES (5, 2, 'Zoe')");
 
-            printCount(conn,"SELECT count(*) FROM names");
+            printCount(conn);
         }
     }
 
@@ -39,8 +38,8 @@ public class SetupDerbyDatabase {
         }
     }
 
-    private static void printCount(Connection conn, String sql) throws SQLException {
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+    private static void printCount(Connection conn) throws SQLException {
+        try (PreparedStatement ps = conn.prepareStatement("SELECT count(*) FROM names")) {
             ResultSet rs = ps.executeQuery();
             rs.next();
             System.out.println(rs.getInt(1));

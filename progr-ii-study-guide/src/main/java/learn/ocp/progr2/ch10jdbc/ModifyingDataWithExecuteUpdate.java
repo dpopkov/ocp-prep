@@ -9,9 +9,7 @@ public class ModifyingDataWithExecuteUpdate {
         var updateSql = "UPDATE exhibits SET name = '' WHERE name = 'None'";
         var deleteSql = "DELETE FROM exhibits WHERE id = 10";
 
-        String url = "jdbc:derby:zoo";
-
-        try (Connection conn = DriverManager.getConnection(url)) {
+        try (Connection conn = DriverManager.getConnection(DerbyZooDb.URL)) {
             try (var ps = conn.prepareStatement(insertSql)) {
                 int result = ps.executeUpdate();
                 System.out.println("result = " + result);

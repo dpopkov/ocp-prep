@@ -57,3 +57,8 @@ __All the code in this repository is just for illustrating purposes!__.
 
 ### Transactions
 * [Controlling Transactions](src/main/java/learn/ocp/progr2/ch10jdbc/ControlTransactions.java)
+
+## Chapter 11 - Security
+
+### Customizing the Serialization Process
+* [Example of customized Employee class](src/main/java/learn/ocp/progr2/ch11secur/writeread/Employee.java)

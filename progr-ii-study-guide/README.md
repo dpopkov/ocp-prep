@@ -62,3 +62,7 @@ __All the code in this repository is just for illustrating purposes!__.
 
 ### Customizing the Serialization Process
 * [Example of customized Employee class](src/main/java/learn/ocp/progr2/ch11secur/writeread/Employee.java)
+
+### Pre/Post-Serialization Processing applying readResolve() and writeReplace()
+* [Example of pre/post processed Employee](src/main/java/learn/ocp/progr2/ch11secur/prepostprocessing/Employee.java)
+

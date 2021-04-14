@@ -13,6 +13,8 @@
         <module>requiremod</module>
         <module>greet</module>
         <module>greetclient</module>
+        <module>openpkg</module>
+        <module>analyzer</module>
     </modules>
 
     <properties>

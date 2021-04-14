@@ -11,6 +11,8 @@
     <modules>
         <module>hellomod</module>
         <module>requiremod</module>
+        <module>greet</module>
+        <module>greetclient</module>
     </modules>
 
     <properties>

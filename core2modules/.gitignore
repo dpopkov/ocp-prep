@@ -1,0 +1,6 @@
+# Idea files
+.idea/
+*.iml
+
+# Target folder
+/../target/

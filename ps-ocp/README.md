@@ -8,3 +8,5 @@ Code for Pluralsight Java Courses
 * [Writing characters](ps-io/src/main/java/learn/ocp/psio/WritingCharacters.java)
 * [Writing primitives](ps-io/src/main/java/learn/ocp/psio/WritingPrimitives.java)
 * [Reading primitives](ps-io/src/main/java/learn/ocp/psio/ReadingPrimitives.java)
+* [Writing Zip](ps-io/src/main/java/learn/ocp/psio/WritingZip.java)
+* [Reading Zip](ps-io/src/main/java/learn/ocp/psio/ReadingZip.java)

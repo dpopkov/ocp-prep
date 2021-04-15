@@ -5,3 +5,7 @@
 # Target and classes
 /**/*.class
 /**/target
+
+# Input/Output files
+ps-io/io/bin/
+ps-io/io/zip/

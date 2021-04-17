@@ -26,3 +26,7 @@ Code for Pluralsight Java Courses
 * [Reading Proxied Objects](ps-io/src/main/java/learn/ocp/psio/serial/ReadingProxiedObjects.java),
 [Proxied Person](ps-io/src/main/java/learn/ocp/psio/serial/PersonProxied.java),
 [Person Proxy](ps-io/src/main/java/learn/ocp/psio/serial/PersonProxy.java)
+* [Find file](ps-io/src/main/java/learn/ocp/psio/files/FindFile.java)
+* [Find by attribute](ps-io/src/main/java/learn/ocp/psio/files/FindFileByAttribute.java)
+* [Walking file tree pattern](ps-io/src/main/java/learn/ocp/psio/files/WalkFileTreePattern.java)
+* [Walk pattern](ps-io/src/main/java/learn/ocp/psio/files/WalkPattern.java)
